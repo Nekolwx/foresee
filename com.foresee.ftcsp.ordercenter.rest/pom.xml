@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.foresee.ftcsp.ordercenter.rest</artifactId>
+	<name>com.foresee.ftcsp.ordercenter.rest</name>
+	<version>0.0.1</version>
+	<url>http://maven.apache.org</url>
+	<description>订单中心REST接口层</description>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>foresee</groupId>
+		<artifactId>com.foresee.ftcsp.ordercenter</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<!-- 依赖包，根据实际需求添加 -->
+	<dependencies>
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.ordercenter.model</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.ordercenter.service</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.public.dquery</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jolokia</groupId>
+			<artifactId>jolokia-core</artifactId>
+		</dependency>
+
+		<!--九维日志监控平台依赖-->
+		<dependency>
+			<groupId>raven.core</groupId>
+			<artifactId>raven.core</artifactId>
+			<version>7.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>raven.logback</groupId>
+			<artifactId>raven.logback</artifactId>
+			<version>7.7.0</version>
+		</dependency>
+		<!--- 引入参数注入和校验 -->
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.public.ftcspmvc</artifactId>
+			<version>0.0.2</version>
+		</dependency>
+
+	</dependencies>
+	
+	
+	<build>
+		<plugins>
+			  <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.foresee.ftcsp.order.rest.OrderApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
+</project>

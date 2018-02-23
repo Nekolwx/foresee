@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.foresee.ftcsp.ordercenter.model</artifactId>
+	<name>com.foresee.ftcsp.ordercenter.model</name>
+	<url>http://maven.apache.org</url>
+	<description>订单中心模型层</description>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>foresee</groupId>
+		<artifactId>com.foresee.ftcsp.ordercenter</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<!-- 依赖包，根据实际需求添加 -->
+	<dependencies>
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.mq.model</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>foresee</groupId>
+			<artifactId>com.foresee.ftcsp.mq.service</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.foresee.mybatis</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>1.0.1</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<verbose>true</verbose>
+					<overwrite>true</overwrite>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>
